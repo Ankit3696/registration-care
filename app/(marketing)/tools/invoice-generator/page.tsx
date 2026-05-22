@@ -10,7 +10,7 @@ export default function InvoiceGeneratorPage() {
       {/* HEADER */}
       <div className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
         <div className="w-full bg-gradient-to-r from-[#081f4d] via-[#0b2864] to-[#12357d]">
-          <div className="mx-auto flex w-full flex-col gap-6 px-6 py-7 xl:flex-row xl:items-center xl:justify-between">
+          <div className="mx-auto flex w-full flex-col gap-6 px-4 py-6 sm:px-6 xl:flex-row xl:items-center xl:justify-between">
             {/* LEFT */}
             <div className="flex items-start gap-5">
               <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-white/10 text-2xl font-bold text-white shadow-lg backdrop-blur-xl">
@@ -22,7 +22,7 @@ export default function InvoiceGeneratorPage() {
                   PROFESSIONAL GST BILLING TOOL
                 </div>
 
-                <h1 className="mt-4 text-3xl font-bold tracking-tight text-white">
+               <h1 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl">
                   Professional GST Invoice Generator
                 </h1>
 
@@ -61,9 +61,7 @@ export default function InvoiceGeneratorPage() {
                 </div>
               </div>
 
-              <div className="rounded-2xl bg-white p-2 shadow-2xl">
-                <PDFClientButton />
-              </div>
+              
             </div>
           </div>
         </div>
@@ -71,11 +69,11 @@ export default function InvoiceGeneratorPage() {
 
       {/* MAIN */}
       <div className="w-full">
-        <div className="grid grid-cols-1 xl:grid-cols-[60%_40%]">
+        <div className="grid grid-cols-1 2xl:grid-cols-[60%_40%]">
           {/* FORM SIDE */}
           <div className="border-b border-slate-200 bg-[#f8fafc] xl:border-b-0 xl:border-r">
             {/* FORM HEADER */}
-            <div className="sticky top-[180px] z-20 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
+            <div className="border-b border-slate-200 bg-white/90 backdrop-blur-xl 2xl:sticky 2xl:top-[180px] 2xl:z-20">
               <div className="flex items-center justify-between px-6 py-5">
                 <div>
                   <h2 className="text-xl font-semibold text-slate-900">
@@ -135,7 +133,7 @@ export default function InvoiceGeneratorPage() {
               <InvoiceDashboard />
             </div>
 
-            {/* QUICK ACTIONS */}
+             {/* QUICK ACTIONS */}
             <div className="px-4 pb-6 xl:px-6">
               <div className="rounded-[30px] border border-slate-200 bg-white p-7 shadow-[0_10px_40px_rgba(15,23,42,0.06)]">
                 <div className="flex flex-col gap-6">
@@ -194,6 +192,8 @@ export default function InvoiceGeneratorPage() {
                 </div>
               </div>
             </div>
+
+           
 
             {/* FOOTER */}
             <div className="pb-6 text-center text-xs text-slate-400">

@@ -92,7 +92,7 @@ export default function InvoicePreview() {
             className="bg-white p-5 xl:p-6"
           >
             {/* HEADER */}
-            <div className="flex items-start justify-between gap-6 border-b border-slate-200 pb-6">
+          <div className="flex flex-col gap-6 border-b border-slate-200 pb-6 lg:flex-row lg:items-start lg:justify-between">
               {/* LEFT */}
               <div className="min-w-0 flex-1">
                 <div className="flex items-start gap-4">
@@ -152,7 +152,7 @@ export default function InvoicePreview() {
               </div>
 
               {/* RIGHT */}
-              <div className="w-[240px] flex-shrink-0">
+             <div className="w-full lg:w-[240px] lg:flex-shrink-0">
                 <div className="flex justify-end">
                   <div className="rounded-full border border-[#081f4d]/10 bg-[#081f4d]/5 px-4 py-2 text-[11px] font-semibold tracking-wide text-[#081f4d]">
                     TAX INVOICE
@@ -179,7 +179,7 @@ export default function InvoicePreview() {
             </div>
 
             {/* CUSTOMER + BANK */}
-            <div className="mt-8 grid grid-cols-2 gap-5">
+           <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-2">
               <BoxCard
                 title="Bill To"
                 heading={customerName}
@@ -203,7 +203,7 @@ export default function InvoicePreview() {
             </div>
 
             {/* TABLE */}
-            <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200">
+           <div className="mt-8 overflow-x-auto rounded-2xl border border-slate-200">
               <table className="w-full border-collapse">
                 <thead>
                   <tr className="bg-[#081f4d] text-[12px] font-semibold text-white">
@@ -377,7 +377,7 @@ export default function InvoicePreview() {
             </div>
 
             {/* SIGN */}
-            <div className="mt-10 flex items-center justify-between gap-10">
+           <div className="mt-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <SignatureBox
                 label="Customer Signature"
               />
@@ -464,7 +464,7 @@ function SignatureBox({
   label: string
 }) {
   return (
-    <div className="w-[42%] text-center">
+    <div className="w-full lg:w-[42%] text-center">
       <div className="border-t border-slate-400 pt-3 text-[12px] text-slate-500">
         {label}
       </div>
