@@ -82,22 +82,31 @@ export default function InvoicePreview() {
     totals.grandTotal
 
   return (
-    <div className="w-full">
-      <div className="mx-auto w-full">
-        <div className="overflow-hidden rounded-[18px] sm:rounded-[24px] border border-slate-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,0.08)]">
-          <div className="h-2 bg-[#081f4d]" />
+    <div className="w-full bg-[#f4f7fb] py-6">
+    <div className="mx-auto w-full max-w-[1120px]">
+        <div className="overflow-hidden rounded-[18px] border border-slate-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,0.08)] sm:rounded-[24px]">
+          {/* TOP BAR */}
+          <div className="flex items-center justify-between bg-gradient-to-r from-[#081f4d] via-[#0b2864] to-[#12357d] px-5 py-4">
+            <div className="text-sm font-semibold tracking-[0.2em] text-white">
+              GST INVOICE
+            </div>
+
+            <div className="text-xs text-blue-100">
+              Professional Business Invoice
+            </div>
+          </div>
 
           <div
             id="invoice-preview"
-            className="bg-white p-3 sm:p-5 xl:p-6"
+            className="bg-white px-8 py-6 sm:px-10 sm:py-8 xl:px-12 xl:py-10"
           >
             {/* HEADER */}
-          <div className="flex flex-col gap-5 border-b border-slate-200 pb-5 lg:flex-row lg:items-start lg:justify-between">
+            <div className="flex flex-col gap-5 border-b border-slate-200 pb-5 lg:flex-row lg:items-start lg:justify-between">
               {/* LEFT */}
               <div className="min-w-0 flex-1">
                 <div className="flex items-start gap-4">
                   {businessLogo && (
-                    <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-2">
+                    <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-sm">
                       <img
                         src={businessLogo}
                         alt="Logo"
@@ -107,7 +116,7 @@ export default function InvoicePreview() {
                   )}
 
                   <div className="min-w-0 flex-1">
-                    <h1 className="line-clamp-2 break-words text-[18px] sm:text-[24px]font-bold leading-tight text-slate-900">
+                    <h1 className="line-clamp-2 break-words text-[18px] font-bold leading-tight text-slate-900 sm:text-[24px]">
                       {businessName ||
                         "Your Company"}
                     </h1>
@@ -152,14 +161,14 @@ export default function InvoicePreview() {
               </div>
 
               {/* RIGHT */}
-             <div className="w-full lg:w-[240px] lg:flex-shrink-0">
+              <div className="w-full lg:w-[260px] lg:flex-shrink-0">
                 <div className="flex justify-end">
-                  <div className="rounded-full border border-[#081f4d]/10 bg-[#081f4d]/5 px-4 py-2 text-[11px] font-semibold tracking-wide text-[#081f4d]">
+                  <div className="rounded-full bg-gradient-to-r from-[#081f4d] to-[#12357d] px-5 py-2 text-[11px] font-semibold tracking-[0.14em] text-white shadow-lg">
                     TAX INVOICE
                   </div>
                 </div>
 
-                <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <div className="mt-5 rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
                   <MetaRow
                     label="Invoice No."
                     value={invoiceNumber}
@@ -179,7 +188,7 @@ export default function InvoicePreview() {
             </div>
 
             {/* CUSTOMER + BANK */}
-          <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
               <BoxCard
                 title="Bill To"
                 heading={customerName}
@@ -203,10 +212,10 @@ export default function InvoicePreview() {
             </div>
 
             {/* TABLE */}
-           <div className="mt-8 overflow-x-auto rounded-2xl border border-slate-200">
+            <div className="mt-8 overflow-x-auto rounded-3xl border border-slate-200">
               <table className="min-w-[700px] w-full border-collapse">
                 <thead>
-                  <tr className="bg-[#081f4d] text-[12px] font-semibold text-white">
+                  <tr className="bg-gradient-to-r from-[#081f4d] via-[#0b2864] to-[#12357d] text-[12px] font-semibold text-white">
                     <th className="px-4 py-4 text-left">
                       Item
                     </th>
@@ -307,8 +316,8 @@ export default function InvoicePreview() {
             </div>
 
             {/* SUMMARY */}
-            <div className="mt-8 grid grid-cols-2 gap-5">
-              <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
+            <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
+              <div className="rounded-3xl border border-slate-200 bg-slate-50/60 p-5">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
                   Amount In Words
                 </p>
@@ -324,7 +333,7 @@ export default function InvoicePreview() {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-slate-200 bg-white p-5">
+              <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
                 <div className="space-y-4 text-[13px]">
                   <SummaryRow
                     label="Subtotal"
@@ -347,13 +356,13 @@ export default function InvoicePreview() {
                     )}
                   />
 
-                  <div className="rounded-2xl bg-[#081f4d] px-5 py-5">
-                    <div className="flex items-center justify-between gap-4">
+                  <div className="rounded-3xl bg-gradient-to-r from-[#081f4d] via-[#0b2864] to-[#12357d] px-5 py-6 shadow-[0_20px_60px_rgba(8,31,77,0.35)]">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
                       <span className="text-[14px] font-semibold text-white">
                         GRAND TOTAL
                       </span>
 
-                      <span className="text-[20px] sm:text-[26px] font-bold text-white">
+                      <span className="break-all text-right text-[18px] font-bold text-white sm:text-[26px]">
                         ₹
                         {grandTotal.toFixed(
                           0
@@ -366,7 +375,7 @@ export default function InvoicePreview() {
             </div>
 
             {/* DECLARATION */}
-            <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
+            <div className="mt-8 rounded-3xl border border-slate-200 bg-slate-50/60 p-5">
               <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
                 Declaration
               </p>
@@ -377,7 +386,7 @@ export default function InvoicePreview() {
             </div>
 
             {/* SIGN */}
-          <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <SignatureBox
                 label="Customer Signature"
               />
@@ -388,8 +397,22 @@ export default function InvoicePreview() {
             </div>
 
             {/* FOOTER */}
-            <div className="mt-8 border-t border-slate-200 pt-5 text-center text-[11px] text-slate-400">
-              This is a computer generated GST invoice.
+            <div className="mt-10 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-5">
+              <div className="flex flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
+                <div>
+                  <p className="text-[12px] font-semibold text-slate-700">
+                    Thank you for your business
+                  </p>
+
+                  <p className="mt-1 text-[11px] text-slate-400">
+                    This is a computer generated GST invoice.
+                  </p>
+                </div>
+
+                <div className="text-[11px] text-slate-400">
+                  Generated via Registration Care
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -482,7 +505,7 @@ function BoxCard({
   lines: string[]
 }) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-5">
+    <div className="rounded-3xl border border-slate-200 bg-slate-50/60 p-5">
       <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
         {title}
       </p>
@@ -504,5 +527,3 @@ function BoxCard({
     </div>
   )
 }
-
-
