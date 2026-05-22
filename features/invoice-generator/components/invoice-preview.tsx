@@ -84,15 +84,15 @@ export default function InvoicePreview() {
   return (
     <div className="w-full">
       <div className="mx-auto w-full">
-        <div className="overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,0.08)]">
+        <div className="overflow-hidden rounded-[18px] sm:rounded-[24px] border border-slate-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,0.08)]">
           <div className="h-2 bg-[#081f4d]" />
 
           <div
             id="invoice-preview"
-            className="bg-white p-5 xl:p-6"
+            className="bg-white p-3 sm:p-5 xl:p-6"
           >
             {/* HEADER */}
-          <div className="flex flex-col gap-6 border-b border-slate-200 pb-6 lg:flex-row lg:items-start lg:justify-between">
+          <div className="flex flex-col gap-5 border-b border-slate-200 pb-5 lg:flex-row lg:items-start lg:justify-between">
               {/* LEFT */}
               <div className="min-w-0 flex-1">
                 <div className="flex items-start gap-4">
@@ -107,7 +107,7 @@ export default function InvoicePreview() {
                   )}
 
                   <div className="min-w-0 flex-1">
-                    <h1 className="line-clamp-2 break-words text-[24px] font-bold leading-tight text-slate-900">
+                    <h1 className="line-clamp-2 break-words text-[18px] sm:text-[24px]font-bold leading-tight text-slate-900">
                       {businessName ||
                         "Your Company"}
                     </h1>
@@ -118,7 +118,7 @@ export default function InvoicePreview() {
                   </div>
                 </div>
 
-                <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4">
+                <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
                   <InfoItem
                     label="GSTIN"
                     value={businessGST}
@@ -179,7 +179,7 @@ export default function InvoicePreview() {
             </div>
 
             {/* CUSTOMER + BANK */}
-           <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-2">
+          <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
               <BoxCard
                 title="Bill To"
                 heading={customerName}
@@ -204,7 +204,7 @@ export default function InvoicePreview() {
 
             {/* TABLE */}
            <div className="mt-8 overflow-x-auto rounded-2xl border border-slate-200">
-              <table className="w-full border-collapse">
+              <table className="min-w-[700px] w-full border-collapse">
                 <thead>
                   <tr className="bg-[#081f4d] text-[12px] font-semibold text-white">
                     <th className="px-4 py-4 text-left">
@@ -353,7 +353,7 @@ export default function InvoicePreview() {
                         GRAND TOTAL
                       </span>
 
-                      <span className="text-[26px] font-bold text-white">
+                      <span className="text-[20px] sm:text-[26px] font-bold text-white">
                         ₹
                         {grandTotal.toFixed(
                           0
@@ -377,7 +377,7 @@ export default function InvoicePreview() {
             </div>
 
             {/* SIGN */}
-           <div className="mt-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <SignatureBox
                 label="Customer Signature"
               />
